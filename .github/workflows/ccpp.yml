@@ -8,15 +8,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-16.04, windows-latest, macOS-latest]
     
     steps:
     - uses: actions/checkout@v1
     - name: install_deps
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-16.04'
       run: ./build_files/build_environment/install_deps.sh --no-confirm --build-all
     - name: make
-      if: matrix.os == 'ubuntu-latest'
+      if: matrix.os == 'ubuntu-16.04'
       run: make -f GNUmakefile
       if: matrix.os == 'windows-latest'
       run: make.bat

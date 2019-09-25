@@ -18,5 +18,3 @@ jobs:
     - name: make
       if: matrix.os == 'ubuntu-16.04'
       run: make -f GNUmakefile
-      if: matrix.os == 'windows-latest'
-      run: make.bat
